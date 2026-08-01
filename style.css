@@ -1,18 +1,26 @@
 :root {
   --primaryBg: #121214;
   --secondaryBg: #1c1c1e;
-  --inverseBg: #444;
-  --sidebarBg: #eb8f3e;
+  --sidebarBg: #F0A06F;
+  --welcomeBg: #242426;
+
+  --lightDark: #444;
+  --lightDarker: #3b3b3b;
+
   --accentRed: #f4855d;
+  --accentBlue: #7EBAEE;
   --darkRed: #8c4a4a;
-  --cardBg: #242426;
+
   --textMain: #e0e0e0;
+  --textMain2: #ffffff;
   --textMuted: #8e8e93;
+  
   --fontHeader: 'Cinzel', serif;
   --fontBody: 'Montserrat', sans-serif;
   --fontScript: 'Pinyon Script', cursive;
 
   --texture: url('assets/subtle-grunge.png');
+  --textureFlower: url('assets/flower.png');
 }
 
 * {
@@ -35,13 +43,15 @@ body {
 .headerNav {
   width: 100%;
   height: 56px;
-  background-color: rgba(244, 244, 255, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: var(--textMain2);
+  border-bottom: px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 20;
+  background-image: var(--textureFlower);
+  background-position: center;
 }
 
       .navContainer {
@@ -83,7 +93,7 @@ body {
       }
 
       .mainNav a:hover {
-        color: #ffffff;
+        color: var(--textMain2);
       }
 
 
@@ -101,7 +111,7 @@ body {
 
 /* Left Sidebar */
 .heroLeft {
-  width: min(280px, 24vw);
+  width: max(280px, 28vw);
   background-color: var(--sidebarBg);
   padding: 25px 20px;
   display: flex;
@@ -110,11 +120,16 @@ body {
   color: #ffffff;
   align-self: stretch;
   min-height: 0;
-  background-image: var(--texture);
+  
+  background-image: var(--textureFlower), linear-gradient(to bottom, var(--textMain2), var(--accentRed) 150%);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  
   flex-shrink: 0;
 }
 
-.heroLeftWelcome {
+
+/* .heroLeftWelcome {
   font-size: 8px;
   letter-spacing: 1.5px;
   font-weight: 700;
@@ -126,7 +141,159 @@ body {
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 1px;
+} */
+
+.characterProfileCard {
+  width: 100%;
+  padding: 35px 25px 30px 25px;
+  border-radius: 12px;
+  background-image: var(--textureFlower, none), var(--accentBlue);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--textColorDark);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Circular Avatar Frame with Decorative Ring */
+.profileAvatarWrapper {
+  margin-bottom: 25px;
+}
+
+.profileAvatarRing {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px solid rgba(54, 107, 130, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileAvatarInner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dots on Outer Ring */
+.ringDot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accentDotColor);
+  border-radius: 50%;
+}
+
+.dotTopRight {
+  top: 14px;
+  right: 6px;
+}
+
+.dotBottomLeft {
+  bottom: 14px;
+  left: 6px;
+}
+
+/* Typography Name Styling */
+.characterNameGroup {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 0.9;
+}
+
+.characterFirstName {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--textColorDark);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.characterLastName {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--textColorPrimary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Tag Pills Layout */
+.characterTagsGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.tagPill {
+  background: var(--tagBg);
+  border: 1px solid var(--tagBorder);
+  color: var(--textColorDark);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+/* Quote Layout */
+.characterQuoteGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.quoteText {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--textColorDark);
+  text-align: right;
+  max-width: 220px;
+  font-weight: 500;
+}
+
+.quoteLineAccent {
+  position: relative;
+  width: 2px;
+  height: 45px;
+  background-color: rgba(54, 107, 130, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quoteDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accentDotColor);
+  border-radius: 50%;
+}
+
 
 .heroRaceSection {
     display: flex;
@@ -196,7 +363,7 @@ body {
     padding: 8px 16px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff;
+    color: var(--textMain2);
     text-decoration: none;
     font-size: 11px;
     letter-spacing: 2px;
@@ -258,12 +425,8 @@ body {
 
 /* Content Area */
 .heroCenter {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: auto;
-  width: 100%;
   position: relative;
+  overflow: visible; /* Allows render to overflow upwards */
 }
 
 /* Hero Banner */
@@ -272,19 +435,36 @@ body {
   height: 380px;
   background-color: #151515;
   background-blend-mode: soft-light;
-  background-image: url('assets/type.png');
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, repeat;
+  background-image: url('assets/type.png'), linear-gradient(to right, var(--accentRed), var(--accentBlue) 75%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  padding: 0 50px;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 1;
+}
+
+.bannerCharacterImage {
+  position: absolute;
+  right: -50px;
+  top: -56px;
+  height: calc(380px + 56px); 
+  z-index: 30; 
+  pointer-events: none; 
+}
+
+.characterRender {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: contrast(1.05);
 }
 
 .bannerTextContainer {
-  z-index: 2;
-  margin-left: 250px;
+  z-index: 35;
+  margin-left: 215px;
+  position: relative;
 }
 
 .mainTitle {
@@ -294,7 +474,7 @@ body {
   letter-spacing: 4px;
   line-height: 1;
   color: #858585;
-  background:linear-gradient(to bottom,var(--textMain),var(--accentRed) 75%);
+  background:linear-gradient(to bottom,var(--textMain2),var(--accentRed) 75%);
   background-clip: text;
   -webkit-background-clip: text;color: transparent;
 }
@@ -318,31 +498,11 @@ body {
   letter-spacing: 6px;
   line-height: 0.9;
   margin-bottom: 15px;
-  background:linear-gradient(to bottom,var(--accentRed),var(--textMain) 75%);
+  background:linear-gradient(to bottom,var(--accentRed),var(--textMain2) 75%);
   background-clip: text;
   -webkit-background-clip: text;color: transparent;
+  padding-left: 50px;
 }
-
-/* .dc-char-left h2 {
-  margin:35px 0px 30px 0px;
-  font:900 65px / 65px var(--title);
-  letter-spacing:-1px;
-  text-align:right;
-  text-transform:uppercase;
-  padding-left:clamp(20px,3vw,50px);
-  position:relative;z-index:1; 
-}
-.dc-char-left h2 div { 
-  font:900 125px / 125px var(--title);
-  text-transform:none;
-  letter-spacing:-4px;
-  background:linear-gradient(to bottom,var(--accentRed),var(--inverseBg) 75%);
-  background-clip: text;
-  -webkit-background-clip: text;color: transparent;
-  padding-right:10px;
-  margin-right:-10px;
-} */
-
 .subTitle {
   font-size: 9px;
   letter-spacing: 2px;
@@ -352,20 +512,6 @@ body {
 .highlightText {
   color: var(--accentRed);
   font-weight: 700;
-}
-
-.bannerCharacterImage {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  z-index: 1;
-}
-
-.characterRender {
-  height: 100%;
-  object-fit: contain;
-  filter: contrast(1.05);
 }
 
 /* Breadcrumbs Bar */
@@ -392,28 +538,54 @@ body {
   pointer-events: auto;
 }
 
-.breadcrumbButton {
+.breadcrumbBtn {
+  position: relative;
   display: inline-block;
-  background-color: rgba(18, 18, 20, 0.92);
-  color: #ffffff;
   text-decoration: none;
   padding: 8px 12px;
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  align-self: stretch;
+  min-height: 0;
+  flex-shrink: 0;
+
+  background-color: var(--textMain2);
+  transition: transform 0.2s ease;
 }
 
-.breadcrumbButton:hover,
-.breadcrumbButton.active {
-  background-color: var(--accentRed);
+.breadcrumbBtnText {
+  display: inline-block;
+
+  background-image: linear-gradient(to right, 
+    var(--accentRed) 50%, 
+    var(--accentBlue) 100%
+  );
+
+  background-size: 200% 100%;
+  background-position: left bottom;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition: background-position 0.4s ease;
+}
+
+.breadcrumbBtn:hover,
+.breadcrumbBtn.active {
   transform: translateY(-1px);
 }
 
+.breadcrumbBtn:hover .breadcrumbBtnText,
+.breadcrumbBtn.active .breadcrumbBtnText {
+  background-position: right bottom;
+}
+
+
 /* Welcome Section */
 .welcomeSection {
-  background-color: var(--secondaryBg);
+  background-color: var(--);
   padding: 30px;
   display: flex;
   gap: 40px;
@@ -438,7 +610,6 @@ body {
   font-family: var(--fontHeader);
   font-size: 16px;
   letter-spacing: 2px;
-  /* border-bottom: 3px solid var(--accentRed); */
   padding-left: 10px;
 }
 
