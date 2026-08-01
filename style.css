@@ -14,6 +14,12 @@
   --textMain: #e0e0e0;
   --textMain2: #ffffff;
   --textMuted: #8e8e93;
+
+  --welcomeBgLight: #e7e5e1;
+  --wCardBg: #ffffff;
+  --wCardDark: #1c1c1e;
+  --textDarkPrimary: #1e1e1f;
+  --textDarkMuted: #6b6b6f;
   
   --fontHeader: 'Cinzel', serif;
   --fontBody: 'Montserrat', sans-serif;
@@ -583,27 +589,60 @@ body {
 }
 
 
-/* Welcome Section */
+/* Welcome Section — card grid dashboard */
 .welcomeSection {
-  background-color: var(--);
-  padding: 30px;
-  display: flex;
-  gap: 40px;
-  align-items: center;
+  background-color: var(--welcomeBgLight);
+  padding: 40px 30px;
   min-height: auto;
   flex: 1;
   margin-top: 0;
   position: relative;
   z-index: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.welcomeTextContent {
-  flex: 1;
+.welcomeGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.85fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "main portrait portrait"
+    "main stats    links"
+    "tab  tab      links";
+  gap: 16px;
+}
+
+/* Shared card shell */
+.wCard {
+  background-color: var(--wCardBg);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Main welcome text card */
+.wCardMain {
+  grid-area: main;
+  padding: 28px 30px;
+  position: relative;
+}
+
+.welcomeEyebrow {
+  display: inline-block;
+  background-color: var(--wCardDark);
+  color: var(--accentRed);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 10px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(244, 133, 93, 0.3);
 }
 
 .sectionTitleGroup {
   position: relative;
   margin-bottom: 15px;
+  padding-left: 14px;
+  border-left: 2px dotted rgba(244, 133, 93, 0.5);
 }
 
 .sectionHeader {
@@ -611,6 +650,17 @@ body {
   font-size: 16px;
   letter-spacing: 2px;
   padding-left: 10px;
+  color: var(--textDarkPrimary);
+}
+
+.scriptOverlay {
+  position: absolute;
+  left: 90px;
+  top: -5px;
+  font-family: var(--fontScript);
+  font-size: 28px;
+  color: var(--textDarkPrimary);
+  opacity: 0.2;
 }
 
 .welcomeDivider {
@@ -622,9 +672,9 @@ body {
 }
 
 .welcomeDividerLineLeft {
-  width: 78px; /* Adjust this value until the text aligns right under the 'C' */
+  width: 78px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
 }
 
@@ -637,68 +687,171 @@ body {
 }
 
 .welcomeDividerLineRight {
-  flex: 1; /* Automatically stretches to the far right edge */
+  flex: 1;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.scriptOverlay {
-  position: absolute;
-  left: 90px;
-  top: -5px;
-  font-family: var(--fontScript);
-  font-size: 28px;
-  color: var(--textMuted);
-  opacity: 0.4;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .welcomeParagraph {
   line-height: 1.6;
-  color: #a0a0a5;
+  color: var(--textDarkMuted);
   font-size: 11px;
   padding-top: 15px;
 }
 
-/* Event Widget */
-.eventWidget {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+/* Portrait card */
+.wCardPortrait {
+  grid-area: portrait;
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
 }
 
-.eventCircularBadge {
-  width: 90px;
-  height: 90px;
-  border: 1px dashed var(--accentRed);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.wPortraitImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.eventTitle {
+.wPortraitTag {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background-color: rgba(28, 28, 30, 0.85);
+  color: var(--textMain2);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 10px;
+  backdrop-filter: blur(4px);
+}
+
+/* Stats card — dark header bar over light stat chips, like the "total hp" block */
+.wCardStats {
+  grid-area: stats;
+  overflow: hidden;
+}
+
+.wStatsBar {
+  background-color: var(--wCardDark);
+  color: var(--textMain2);
   font-family: var(--fontHeader);
   font-size: 10px;
   font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 12px 16px;
+}
+
+.wStatsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.wStatChip {
+  background-color: var(--wCardBg);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wStatValue {
+  font-family: var(--fontHeader);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--textDarkPrimary);
+}
+
+.wStatLabel {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--textDarkMuted);
+}
+
+/* Tab card — gradient vertical label + list, echoing the "CLASS SKILLS" tab */
+.wCardTab {
+  grid-area: tab;
+  display: flex;
+  overflow: hidden;
+}
+
+.wTabLabel {
+  background-image: linear-gradient(to bottom, var(--accentBlue), var(--accentRed));
+  color: var(--textMain2);
+  width: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wTabLabel span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--fontHeader);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.wTabList {
+  list-style: none;
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+  align-content: center;
+  flex: 1;
+}
+
+.wTabList li {
+  font-size: 10px;
+  color: var(--textDarkPrimary);
+  font-weight: 600;
+}
+
+.wTabPlus {
+  color: var(--accentRed);
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+/* Links card — stacked dark pill buttons, echoing the dice-roller list */
+.wCardLinks {
+  grid-area: links;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+}
+
+.wLinkBtn {
+  background-color: var(--wCardDark);
+  color: var(--textMain2);
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease;
+}
+
+.wLinkArrow {
   color: var(--accentRed);
 }
 
-.eventSubtitle {
-  font-size: 7px;
-  color: var(--textMuted);
+.wLinkBtn:hover {
+  background-color: var(--accentRed);
 }
 
-.eventThumbnails {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-
-.thumbSquare {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.wLinkBtn:hover .wLinkArrow {
+  color: var(--textMain2);
 }
