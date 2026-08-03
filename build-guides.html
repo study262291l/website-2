@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Guides — Type Soul</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@400;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="headerNav">
+    <div class="navContainer">
+      <a href="home.html" class="navHomeIcon"><i class="fa-solid fa-house"></i></a>
+      <nav class="mainNav">
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+        <a href="#"><i class="fa-solid fa-users"></i> Members</a>
+        <a href="#"><i class="fa-solid fa-gear"></i> Admin</a>
+        <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="#"><i class="fa-solid fa-paper-plane"></i> Messages</a>
+        <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
+        <a href="build-guides.html"><i class="fa-solid fa-scroll"></i> Guides</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="guidePage">
+
+    <section class="guideIntro">
+      <span class="guideEyebrow">PATHS OF POWER</span>
+      <div class="guideTitleGroup">
+        <h1 class="guidePageTitle">BUILD GUIDES</h1>
+        <span class="guideScriptOverlay">guides</span>
+      </div>
+      <p class="guideIntroText">
+        Every blade, bow, and mask hides a different path to power. Pick a race below to see how
+        the veterans allocate their stats and climb toward Bankai, Vollständig, or Resurrección.
+      </p>
+    </section>
+
+    <nav class="guideTabs">
+      <button class="guideTabBtn active" data-race="soulreaper">SOUL REAPER</button>
+      <button class="guideTabBtn" data-race="quincy">QUINCY</button>
+      <button class="guideTabBtn" data-race="arrancar">ARRANCAR</button>
+    </nav>
+
+    <!-- ===== SOUL REAPER ===== -->
+    <section class="guidePanel active" data-race="soulreaper">
+      <div class="guideGrid">
+
+        <div class="wCard guideCardMain">
+          <div class="guidePortraitWrap">
+            <img src="assets/type3.png" alt="Soul Reaper Bankai" class="guidePortraitImg">
+            <span class="guidePortraitTag">BANKAI</span>
+          </div>
+          <div class="guideCardBody">
+            <span class="welcomeEyebrow">MELEE // BANKAI</span>
+            <div class="sectionTitleGroup">
+              <h2 class="sectionHeader">SOUL REAPER</h2>
+              <span class="scriptOverlay">reaper</span>
+            </div>
+            <div class="welcomeDivider">
+              <span class="welcomeDividerLineLeft"></span>
+              <span class="welcomeDividerText">RESPECT RACE</span>
+              <span class="welcomeDividerLineRight"></span>
+            </div>
+            <p class="guideFlavor">
+              Zanpakuto in hand, Flash Step under your feet. Soul Reaper is the "respect race" for a
+              reason — slow to master, unforgiving to fight, and built around closing distance and
+              never letting go. Every point you spend should push you closer to Bankai.
+            </p>
+            <div class="guideTagsRow">
+              <span class="guideTag">Frontline</span>
+              <span class="guideTag">Difficulty: Medium</span>
+              <span class="guideTag">Range: Melee</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wCard guideCardStats">
+          <div class="wStatsBar">STAT PRIORITY</div>
+          <div class="guideStatsGrid">
+            <div class="guideStatRow"><span class="guideStatName">DESTRUCTION</span><span class="guideStatPriority">CORE</span></div>
+            <div class="guideStatRow"><span class="guideStatName">VITALITY</span><span class="guideStatPriority">CORE</span></div>
+            <div class="guideStatRow"><span class="guideStatName">SPACE</span><span class="guideStatPriority">SECONDARY</span></div>
+            <div class="guideStatRow"><span class="guideStatName">TIME</span><span class="guideStatPriority">SECONDARY</span></div>
+            <div class="guideStatRow"><span class="guideStatName">KNOWLEDGE</span><span class="guideStatPriority">FILLER</span></div>
+          </div>
+        </div>
+
+        <div class="wCard guideCardRoadmap">
+          <div class="wStatsBar">ROADMAP</div>
+          <ul class="guideRoadmapList">
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">EARLY GAME</span>
+              <p class="guideRoadmapText">Grind Zanpakuto proficiency before anything else. Sealed form is weak, so spar in low-stakes threads for free reps.</p>
+            </li>
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">MID GAME</span>
+              <p class="guideRoadmapText">Unlock Shikai and commit to it. Pair with a Flash Step build so you dictate engagement range instead of getting kited.</p>
+            </li>
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">LATE GAME</span>
+              <p class="guideRoadmapText">Bankai is the finish line, not a shortcut. Stack DESTRUCTION until unlock, then shift into VITALITY to survive using it.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== QUINCY ===== -->
+    <section class="guidePanel" data-race="quincy">
+      <div class="guideGrid">
+
+        <div class="wCard guideCardMain">
+          <div class="guidePortraitWrap">
+            <img src="assets/type4.png" alt="Quincy Formalwear" class="guidePortraitImg">
+            <span class="guidePortraitTag">VOLLSTÄNDIG</span>
+          </div>
+          <div class="guideCardBody">
+            <span class="welcomeEyebrow">RANGED // VOLLSTÄNDIG</span>
+            <div class="sectionTitleGroup">
+              <h2 class="sectionHeader">QUINCY</h2>
+              <span class="scriptOverlay">quincy</span>
+            </div>
+            <div class="welcomeDivider">
+              <span class="welcomeDividerLineLeft"></span>
+              <span class="welcomeDividerText">DONT BE A QUINCY, THEY SAID</span>
+              <span class="welcomeDividerLineRight"></span>
+            </div>
+            <p class="guideFlavor">
+              Quincy don't win fights, they avoid losing them. Spirit bows, kiting, and just enough
+              cheese to make melee mains uninstall. If you'd rather out-position someone than
+              out-trade them, this is the build.
+            </p>
+            <div class="guideTagsRow">
+              <span class="guideTag">Backline</span>
+              <span class="guideTag">Difficulty: High</span>
+              <span class="guideTag">Range: Ranged</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wCard guideCardStats">
+          <div class="wStatsBar">STAT PRIORITY</div>
+          <div class="guideStatsGrid">
+            <div class="guideStatRow"><span class="guideStatName">FORTUNE</span><span class="guideStatPriority">CORE</span></div>
+            <div class="guideStatRow"><span class="guideStatName">ORDER</span><span class="guideStatPriority">CORE</span></div>
+            <div class="guideStatRow"><span class="guideStatName">KNOWLEDGE</span><span class="guideStatPriority">SECONDARY</span></div>
+            <div class="guideStatRow"><span class="guideStatName">SPACE</span><span class="guideStatPriority">SECONDARY</span></div>
+            <div class="guideStatRow"><span class="guideStatName">VITALITY</span><span class="guideStatPriority">FILLER</span></div>
+          </div>
+        </div>
+
+        <div class="wCard guideCardRoadmap">
+          <div class="wStatsBar">ROADMAP</div>
+          <ul class="guideRoadmapList">
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">EARLY GAME</span>
+              <p class="guideRoadmapText">Learn reishi manipulation basics and practice drawing your bow mid-movement. Standing still to shoot gets Quincy killed.</p>
+            </li>
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">MID GAME</span>
+              <p class="guideRoadmapText">Build out your Hirenkyaku footwork so you can kite Soul Reapers indefinitely. This is where the "cheese" reputation is earned.</p>
+            </li>
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">LATE GAME</span>
+              <p class="guideRoadmapText">Push toward Vollständig once FORTUNE is comfortably ahead of ORDER. It burns fast — pop it once the fight is already decided.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== ARRANCAR ===== -->
+    <section class="guidePanel" data-race="arrancar">
+      <div class="guideGrid">
+
+        <div class="wCard guideCardMain">
+          <div class="guidePortraitWrap">
+            <img src="assets/watercolorbleach.png" alt="Arrancar Resurrección" class="guidePortraitImg">
+            <span class="guidePortraitTag">RESURRECCIÓN</span>
+          </div>
+          <div class="guideCardBody">
+            <span class="welcomeEyebrow">HYBRID // RESURRECCIÓN</span>
+            <div class="sectionTitleGroup">
+              <h2 class="sectionHeader">ARRANCAR</h2>
+              <span class="scriptOverlay">arrancar</span>
+            </div>
+            <div class="welcomeDivider">
+              <span class="welcomeDividerLineLeft"></span>
+              <span class="welcomeDividerText">HALF HOLLOW, ALL DRAMA</span>
+              <span class="welcomeDividerLineRight"></span>
+            </div>
+            <p class="guideFlavor">
+              Arrancar mix melee and Cero pressure into one unstable hybrid kit — high ceiling, high
+              risk, and a Resurrección that can swing a fight in one exchange if you time it right.
+            </p>
+            <div class="guideTagsRow">
+              <span class="guideTag">Hybrid</span>
+              <span class="guideTag">Difficulty: High</span>
+              <span class="guideTag">Range: Melee / Ranged</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wCard guideCardStats">
+          <div class="wStatsBar">STAT PRIORITY</div>
+          <div class="guideStatsGrid">
+            <div class="guideStatRow"><span class="guideStatName">ENTROPY</span><span class="guideStatPriority">CORE</span></div>
+            <div class="guideStatRow"><span class="guideStatName">PASSION</span><span class="guideStatPriority">CORE</span></div>
+            <div class="guideStatRow"><span class="guideStatName">UNBOUND</span><span class="guideStatPriority">SECONDARY</span></div>
+            <div class="guideStatRow"><span class="guideStatName">DESTRUCTION</span><span class="guideStatPriority">SECONDARY</span></div>
+            <div class="guideStatRow"><span class="guideStatName">UNITY</span><span class="guideStatPriority">FILLER</span></div>
+          </div>
+        </div>
+
+        <div class="wCard guideCardRoadmap">
+          <div class="wStatsBar">ROADMAP</div>
+          <ul class="guideRoadmapList">
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">EARLY GAME</span>
+              <p class="guideRoadmapText">Master Sonido and basic Cero control before touching Resurrección. A whiffed Cero just tells everyone where you are.</p>
+            </li>
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">MID GAME</span>
+              <p class="guideRoadmapText">Alternate melee pressure with Bala bursts to keep your ENTROPY meter climbing without overextending.</p>
+            </li>
+            <li class="guideRoadmapStep">
+              <span class="guideRoadmapPhase">LATE GAME</span>
+              <p class="guideRoadmapText">Save Resurrección as a finisher, not an opener. Pop it once UNBOUND is high enough to hold the form through a full exchange.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="build-guides.js"></script>
+</body>
+</html>
