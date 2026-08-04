@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord — Type Soul</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@400;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="headerNav">
+    <div class="navContainer">
+      <a href="home.html" class="navHomeIcon"><i class="fa-solid fa-house"></i></a>
+      <nav class="mainNav">
+        <a href="build-guides.html"><i class="fa-solid fa-scroll"></i> Guides</a>
+        <a href="#"><i class="fa-solid fa-lightbulb"></i> Fun Facts</a>
+        <a href="#"><i class="fa-solid fa-pencil"></i> Quiz</a>
+        <a href="discord.html" class="active"><i class="fa-brands fa-discord"></i> Discord</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="discordPage">
+    <div class="discordContainer">
+      
+      <div class="discordHeroBanner">
+        <div class="discordHeroInfo">
+          <div class="discordServerAvatar">
+            <i class="fa-brands fa-discord"></i>
+          </div>
+          <div class="discordServerDetails">
+            <div class="discordTagRow">
+              <span class="discordPillTag"><i class="fa-solid fa-shield-halved"></i> Official Community</span>
+              <span class="discordOnlineIndicator"><span class="greenDot"></span> Live Community</span>
+            </div>
+            <h1 class="discordTitle">TYPE SOUL COMMUNITY</h1>
+            <p class="discordDesc">
+              The central hub for clan recruitment, live event brackets, game announcements, build theorycrafting, and trade listings.
+            </p>
+          </div>
+        </div>
+
+        <div class="discordActions">
+          <a href="https://discord.gg/type-soul" target="_blank" rel="noopener" class="discordPrimaryBtn">
+            <i class="fa-brands fa-discord"></i> Join Server
+          </a>
+          <button class="discordSecondaryBtn" id="copyInviteBtn" type="button" data-invite="https://discord.gg/type-soul">
+            <i class="fa-regular fa-copy"></i> Copy Link
+          </button>
+        </div>
+      </div>
+
+      <div class="discordMainGrid">
+        
+        <div class="discordGridCol">
+          
+          <div class="wCard discordSectionCard">
+            <div class="wStatsBar">COMMUNITY HUB & CHANNELS</div>
+            <div class="discordChannelList">
+              
+              <div class="discordChannelRow">
+                <i class="fa-solid fa-hashtag discordChannelIcon"></i>
+                <div class="discordChannelText">
+                  <span class="discordChannelTitle"># announcements</span>
+                  <span class="discordChannelSub">Patch updates, downtime alerts, and official codes directly synced.</span>
+                </div>
+              </div>
+
+              <div class="discordChannelRow">
+                <i class="fa-solid fa-hashtag discordChannelIcon"></i>
+                <div class="discordChannelText">
+                  <span class="discordChannelTitle"># update-logs</span>
+                  <span class="discordChannelSub">Newly implemented items added into the game.</span>
+                </div>
+              </div>
+
+              <div class="discordChannelRow">
+                <i class="fa-solid fa-hashtag discordChannelIcon"></i>
+                <div class="discordChannelText">
+                  <span class="discordChannelTitle"># community-news</span>
+                  <span class="discordChannelSub">News of bugs in the game are recognised and mentioned here.</span>
+                </div>
+              </div>
+
+              <div class="discordChannelRow">
+                <i class="fa-solid fa-hashtag discordChannelIcon"></i>
+                <div class="discordChannelText">
+                  <span class="discordChannelTitle"># sneak-peaks</span>
+                  <span class="discordChannelSub">Upcoming updates on the game for members to see.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="wCard discordSectionCard">
+            <div class="wStatsBar">SERVER BENEFITS & RULES</div>
+            <div class="discordPerksGrid">
+              <div class="discordPerkBox">
+                <i class="fa-solid fa-bolt perkIcon"></i>
+                <div>
+                  <h4>Early Patch Previews</h4>
+                  <p>Get sneak peeks at upcoming reroll tweaks and balance updates before public releases.</p>
+                </div>
+              </div>
+              <div class="discordPerkBox">
+                <i class="fa-solid fa-trophy perkIcon"></i>
+                <div>
+                  <h4>Update Logs</h4>
+                  <p>Get up to date updates from the creator of Type Soul.</p>
+                </div>
+              </div>
+              <div class="discordPerkBox">
+                <i class="fa-solid fa-headset perkIcon"></i>
+                <div>
+                  <h4>Active Moderation</h4>
+                  <p>Get information of current ingame bugs that is not fixed yet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="discordGridCol">
+          <div class="wCard discordWidgetCard">
+            <div class="wStatsBar">SERVER PREVIEW</div>
+            
+            <iframe 
+              src="https://discord.com/widget?id=YOUR_SERVER_ID&theme=dark" 
+              width="100%" 
+              height="400" 
+              allowtransparency="true" 
+              frameborder="0" 
+              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+              class="discordIframeWidget"
+              title="Discord Server Widget">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div class="discordToast" id="discordToast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Invite link copied to clipboard!</span>
+  </div>
+
+  <script src="discord.js"></script>
+</body>
+</html>
